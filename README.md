@@ -1,13 +1,18 @@
 jQuery.powerpack
 ====================
 
-Powerpack for jquery, the missing recipes in real world projects 
+Powerpack for jquery, the missing recipes in real world projects, also available as NPM module 
+
+FE tooling spec: grunt+mocha+chai+sinon+browserify+testem
 
 ## Setup
    
-Clone the repo and run `npm install` to install npm dependecy. `npm test` or `testem` to run the tests
- 
-FE tooling spec: grunt+mocha+chai+sinon+browserify+testem
+For direct usage   
+```js
+npm install jquery.powerpack
+```
+
+For developemet, clone the repo and run `npm install` to install npm dependecy. `npm test` or `testem` to run the tests
 
 PS. tests will fail in phantomjs, becuase it doesn't support Funciton.prototype.bind since it's build with QTwebkit. you can either polyfill the bind or just use a real browser (the .bind is used in the spec to validate params)
 
