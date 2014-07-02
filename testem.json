@@ -1,0 +1,19 @@
+{
+  "test_page": "test/webui.mustache",
+  "framework": "mocha+chai",
+  "serve_files": ["browserified.js"],
+  "src_files": [
+    "node_modules/sinon/pkg/sinon-1.7.3.js",
+    "lib/*.js",
+    "test/spec/*.spec.js"
+  ],
+  "before_tests": "browserify test/spec/jquery.powerpack.spec.js > browserified.js",
+  "on_exit": "rm browserified.js",
+  "launchers": {
+    "node": {
+      "command": "mocha -r test/setup.js -R tap test/spec/*.spec.js",
+      "protocol": "tap"
+    }
+  },
+  "launch_in_dev": ["chrome"]
+}

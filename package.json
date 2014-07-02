@@ -1,0 +1,32 @@
+{
+  "name": "jquery.powerpack",
+  "version": "0.0.1",
+  "license": "MIT",
+  "description": "jquery.powerpack",
+  "author": {
+    "name": "Yi Cao",
+    "email": "email4yi@gmail.com"
+  },
+  "main": "./lib/jquery.powerpack.js",
+  "scripts": {
+    "test": "./node_modules/.bin/testem"
+  },
+  "dependencies": {
+    "jquery": "^2.1.1"
+  },
+  "devDependencies": {
+    "browserify": "^4.2.0",
+    "chai": "~1.8.1",
+    "grunt": "^0.4.5",
+    "grunt-browserify": "^2.1.2",
+    "grunt-contrib-watch": "^0.6.1",
+    "literalify": "^0.3.0",
+    "mocha": "~1.15.1",
+    "sinon": "~1.7.3",
+    "testem": "~0.5.12"
+  },
+  "literalify": {"jquery": "window.$"},
+  "engines": {
+    "node": ">= 0.6"
+  }
+}
