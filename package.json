@@ -3,10 +3,21 @@
   "version": "0.0.1",
   "license": "MIT",
   "description": "jquery.powerpack",
+  "keywords": [
+    "jquery",
+    "powerpack",
+    "jquery.powerpack"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/yidea/jquery.powerpack.git"
+  },
   "author": {
     "name": "Yi Cao",
     "email": "email4yi@gmail.com"
   },
+
+
   "main": "./lib/jquery.powerpack.js",
   "scripts": {
     "test": "./node_modules/.bin/testem"
@@ -27,6 +38,6 @@
   },
   "literalify": {"jquery": "window.$"},
   "engines": {
-    "node": ">= 0.6"
+    "node": ">= 0.8.0"
   }
 }
