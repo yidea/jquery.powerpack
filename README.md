@@ -9,7 +9,7 @@ FE tooling spec: grunt+mocha+chai+sinon+browserify+testem
    
 For direct usage   
 ```js
-npm install jquery.powerpack
+npm install jquery.powerpack --save
 ```
 
 For development, clone the repo and run `npm install` to install npm dependecy. `npm test` or `testem` to run the tests. Run `grunt watch` when you are going to edit the lib/jquery.powerpack.js 
@@ -30,5 +30,3 @@ https://github.com/paulgrock/testem-blanket-mocha-chai-sinon-plato
 
 Browerify + literalify for browser usage
 http://truongtx.me/2014/03/20/browserify-bring-nodejs-modules-to-browser/
-
-

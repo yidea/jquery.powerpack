@@ -5,7 +5,7 @@
   <link rel="stylesheet" href="/testem/mocha.css">
   <script src="/testem/mocha.js"></script>
   <script src="/testem.js"></script>
-  <script>mocha.setup('bdd');</script>
+  <script>mocha.setup({ui: "bdd"});</script>
   {{#serve_files}}
     <script src="/{{src}}"></script>
   {{/serve_files}}

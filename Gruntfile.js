@@ -21,11 +21,14 @@ module.exports = function(grunt) {
     }
   });
 
-  // plugin task
+  // plugin tasks
   grunt.loadNpmTasks("grunt-browserify");
   grunt.loadNpmTasks('grunt-contrib-watch');
 
-  // custom task
+  // custome tasks
+  grunt.registerTask('dev', ["watch"]);
+  grunt.registerTask('build', ["browserify:client"]);
+
 //  var browserify = require('browserify'),
 //    literalify = require('literalify'),
 //    fs = require("fs");
