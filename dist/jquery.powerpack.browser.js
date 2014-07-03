@@ -54,8 +54,6 @@ var jQuery = window.$;
     return rect.right <= (0 - options.threshold);
   };
 
-
-
 }(jQuery));
 
 module.exports = jQuery;

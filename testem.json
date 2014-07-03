@@ -9,11 +9,5 @@
   ],
   "before_tests": "browserify test/spec/jquery.powerpack.spec.js > browserified.js",
   "on_exit": "rm browserified.js",
-  "launchers": {
-    "node": {
-      "command": "mocha -r test/setup.js -R tap test/spec/*.spec.js",
-      "protocol": "tap"
-    }
-  },
-  "launch_in_dev": ["chrome"]
+  "launch_in_dev": ["chrome canary"]
 }
