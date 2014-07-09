@@ -1,4 +1,6 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);throw new Error("Cannot find module '"+o+"'")}var f=n[o]={exports:{}};t[o][0].call(f.exports,function(e){var n=t[o][1][e];return s(n?n:e)},f,f.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
+"use strict";
+
 var jQuery = window.$;
 
 (function($){
@@ -17,10 +19,14 @@ var jQuery = window.$;
 
     if (options.fully) {
       // test if the block is fully in viewport
-      return (rect.top >= 0 && rect.bottom <= viewportHeight && rect.left >= 0 && rect.right <= viewportWidth);
+      return (rect.top >= 0 && rect.bottom <= viewportHeight && rect.left >= 0 &&
+        rect.right <= viewportWidth);
     } else {
       // partial in viewport, threshold take effect here
-      return !(rect.top >= (viewportHeight + options.threshold)) && !(rect.bottom <= (0 - options.threshold)) && !(rect.left >= (viewportWidth + options.threshold)) && !(rect.right <= (0 - options.threshold));
+      return rect.top < (viewportHeight + options.threshold) &&
+        rect.bottom > (0 - options.threshold) &&
+        rect.left < (viewportWidth + options.threshold) &&
+        rect.right > (0 - options.threshold);
     }
   };
 

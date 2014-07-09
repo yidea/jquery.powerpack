@@ -1,6 +1,6 @@
 {
   "name": "jquery.powerpack",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "license": "MIT",
   "description": "jquery.powerpack",
   "keywords": [
@@ -16,8 +16,6 @@
     "name": "Yi Cao",
     "email": "email4yi@gmail.com"
   },
-
-
   "main": "./lib/jquery.powerpack.js",
   "scripts": {
     "test": "./node_modules/.bin/testem"
@@ -30,13 +28,17 @@
     "chai": "~1.8.1",
     "grunt": "^0.4.5",
     "grunt-browserify": "^2.1.2",
+    "grunt-contrib-jshint": "^0.10.0",
+    "grunt-contrib-uglify": "^0.5.0",
     "grunt-contrib-watch": "^0.6.1",
     "literalify": "^0.3.0",
     "mocha": "~1.15.1",
     "sinon": "~1.7.3",
     "testem": "~0.5.12"
   },
-  "literalify": {"jquery": "window.$"},
+  "literalify": {
+    "jquery": "window.$"
+  },
   "engines": {
     "node": ">= 0.8.0"
   }

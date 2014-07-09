@@ -3,31 +3,58 @@ module.exports = function(grunt) {
   grunt.initConfig({
     pkg: grunt.file.readJSON("package.json"),
 
+    jshint: {
+      "build": {
+        options: {
+          jshintrc: ".jshintrc"
+        },
+        files: {
+          src: [
+            "lib/jquery.powerpack.js",
+            "!dist/*"
+          ]
+        }
+      }
+    },
+
     browserify: {
       client: {
-        src: ["lib/jquery.powerpack.js"],
-        dest: "dist/jquery.powerpack.browser.js",
         options: {
           transform: ["literalify"]
-        }
+        },
+        src: ["lib/jquery.powerpack.js"],
+        dest: "dist/jquery.powerpack.browser.js"
+      }
+    },
+
+    uglify: {
+      options: {
+        mangle: true, //false to prevent change variable name
+        banner: '/*! <%= pkg.name %>.min <%= grunt.template.today("yyyy-mm-dd") %> */\n'
+      },
+      build: {
+        src: "dist/jquery.powerpack.browser.js",
+        dest: "dist/jquery.powerpack.browser.min.js"
       }
     },
 
     watch: {
       scripts: {
         files: ["lib/jquery.powerpack.js"],
-        tasks: ["browserify:client"]
+        tasks: ["jshint:build", "browserify:client"]
       }
     }
   });
 
   // plugin tasks
-  grunt.loadNpmTasks("grunt-browserify");
+  grunt.loadNpmTasks('grunt-contrib-uglify');
+  grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks("grunt-browserify");
 
   // custome tasks
   grunt.registerTask('dev', ["watch"]);
-  grunt.registerTask('build', ["browserify:client"]);
+  grunt.registerTask('build', ["jshint:build", "browserify:client", "uglify"]);
 
 //  var browserify = require('browserify'),
 //    literalify = require('literalify'),
